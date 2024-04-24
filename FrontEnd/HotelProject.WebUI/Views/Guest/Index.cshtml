@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+
+@model List<ResultGuestDto>
+
+<table class="table table-bordered">
+    <thead>
+        <
+        <tr>
+            <th>#</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Şehir</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>@item.SurName</td>
+                <td>@item.City</td>
+                <td><a href="/Guest/DeleteGuest/@item.ID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Guest/UpdateGuest/@item.ID" class="btn btn-success">Güncelle</a></td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Guest/AddGuest/" class="btn btn-dark">Yeni Misafir Girişi</a>
+
+
+
+
+

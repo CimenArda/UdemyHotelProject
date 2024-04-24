@@ -1,0 +1,42 @@
+﻿
+@model List<BookingApiViewModel.Data.Hotel>
+
+@{
+    Layout = null;
+    int count = 0;
+}
+
+<a href="~/lib/bootstrap/dist/css/bootstrap.css.map">~/lib/bootstrap/dist/css/bootstrap.css.map</a>
+<a href="~/lib/bootstrap/dist/css/bootstrap.min.css.map">~/lib/bootstrap/dist/css/bootstrap.min.css.map</a>
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="container">
+    <br />
+    <br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Otel Adı</th>
+            <th>Otel Puanı</th>
+            <th>Otel Detaylar</th>
+
+           
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            count++;
+
+            <tr>
+                <td>@count</td>
+                <td>@item.property.name</td>
+                <td>@item.property.reviewScore</td>
+                <td><a href="#" class="btn btn-outline-dark">Detaylar</a></td>
+            </tr>
+
+
+        }
+    </table>
+
+</div>

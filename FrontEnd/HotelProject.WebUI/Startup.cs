@@ -1,5 +1,9 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.EntityLayer.Concrete;
+using HotelProject.WebUI.Dtos.GuestDto;
+using HotelProject.WebUI.ValidationRules.GuestValidationRules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -32,7 +36,11 @@ namespace HotelProject.WebUI
 
             services.AddHttpClient();
 
-            services.AddControllersWithViews();
+            services.AddTransient<IValidator<CreateGuestDto>,GuestCreateValidator>();
+            services.AddTransient<IValidator<UpdateGuestDto>, GuestUpdateValidator>();
+
+
+            services.AddControllersWithViews().AddFluentValidation();
 
           
 
@@ -60,7 +68,7 @@ namespace HotelProject.WebUI
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Default}/{action=Index}/{id?}");
             });
         }
     }

@@ -1,0 +1,39 @@
+﻿@model List<BookingApiLocationSearchViewModel.Datum>
+
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="container">
+    <br />
+    <br />
+
+    @using (Html.BeginForm("Index", "SearchLocationID", FormMethod.Post))
+    {
+        <label>Şehir Adı Giriniz</label>
+        <input type="text" class="form-control" name="cityname" />
+        <label class="text-black-50">Kopyalanan Id değerine göre otel aramasına gidebilirsiniz.</label>
+        <br />
+        <button class="btn btn-primary">Şehirin Id değerini bul</button>
+
+    }
+    <table class="table table-bordered">
+        <tr>
+            <th>Lokasyon</th>
+
+        </tr>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@item.dest_id</td>
+
+            </tr>
+
+
+        }
+    </table>
+    <a href="/BookingByCity/Index/" class="btn btn-outline-dark">Mevcut Oteller</a>
+</div>
