@@ -30,5 +30,11 @@ namespace HotelProject.WebUI.Dtos.RegisterDto
         public string PasswordConfirm { get; set; }
 
 
+        public int WorkLocationID { get; set; }
+
+
+
+
+
     }
 }

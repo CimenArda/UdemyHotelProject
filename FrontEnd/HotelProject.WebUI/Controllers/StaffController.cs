@@ -1,4 +1,5 @@
-﻿using HotelProject.WebUI.Models.Staff;
+﻿using HotelProject.WebUI.Dtos.ContactDto;
+using HotelProject.WebUI.Models.Staff;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -74,12 +75,12 @@ namespace HotelProject.WebUI.Controllers
         {
             var client =_httpClientFactory.CreateClient();
 
-            var responseMessage = await client.GetAsync($"http://localhost:47401/api/Staff/{id}");
+            var responseMessage = await client.GetAsync($"http://localhost:47401/api/Contact/{id}");
 
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<UpdateStaffViewModel>(jsonData);
+                var values = JsonConvert.DeserializeObject<GetMessageByIdDto>(jsonData);
                 return View(values);
             }
 

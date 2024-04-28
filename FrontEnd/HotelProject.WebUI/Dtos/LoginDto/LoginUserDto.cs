@@ -9,5 +9,7 @@ namespace HotelProject.WebUI.Dtos.LoginDto
 
         [Required(ErrorMessage = "Kullanıcı Adı giriniz.")]
         public string Password { get; set; }
+
+
     }
 }

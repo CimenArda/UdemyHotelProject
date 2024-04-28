@@ -50,7 +50,7 @@
                             <div class="card-body pt-5">
                                 <a class="text-center" href="~/adminweb/index.html"> <h4>Giriş Yap</h4></a>
 
-                                <form class="mt-5 mb-5 login-input" method="post">
+                                <form class="mt-5 mb-5 login-input" method="post" >
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Kullanıcı Adınız" asp-for="Username" />
                                         <span class="text-danger" asp-validation-for="Username"></span>
@@ -63,7 +63,7 @@
 
                                     <button class="btn login-form__btn submit w-100">Giriş Yap</button>
                                 </form>
-                                <p class="mt-5 login-form__footer">Dont have account? <a href="Register/Index" class="text-primary">Kayıt Ol</a> Şimdi!</p>
+                                <p class="mt-5 login-form__footer">Dont have account? <a href="/Register/Index" class="text-primary">Kayıt Ol</a> Şimdi!</p>
                             </div>
                         </div>
                     </div>
