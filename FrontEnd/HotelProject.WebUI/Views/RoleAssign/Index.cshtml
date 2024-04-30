@@ -1,0 +1,36 @@
+﻿@model List<HotelProject.EntityLayer.Concrete.AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+
+<table class="table table-xs mb-0">
+    <thead>
+        <tr>
+            <th> Kullanıcı Ad-Soyad</th>
+            <th>Rol Ata</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+
+            <tr>
+
+                <td>@item.Name @item.Surname</td>
+                <td><a href="/RoleAssign/AssignRole/@item.Id" class="btn btn-primary"> Rol Ata</a></td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+
+
+
+

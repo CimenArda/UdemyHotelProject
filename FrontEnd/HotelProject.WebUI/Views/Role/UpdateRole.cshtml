@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "UpdateRole";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+<h1>Yeni Rol Ekleme Sayfası</h1>
+
+@model HotelProject.WebUI.Models.Role.UpdateRoleViewModel
+
+<form method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label class="form-label"> RolAdı</label>
+        <input type="text" asp-for="RoleName" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>
+
+
