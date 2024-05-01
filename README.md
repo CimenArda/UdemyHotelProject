@@ -19,3 +19,5 @@ Here are some structures and Technologies used in the Project:
 - Email Sending Procedures
 
 - Fluent Validation
+
+![1](https://github.com/CimenArda/UdemyHotelProject/assets/147205701/e1731945-fa04-4cf2-87bc-5c2ff06ab064)
