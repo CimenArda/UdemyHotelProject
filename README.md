@@ -6,7 +6,7 @@ Here are some structures and Technologies used in the Project:
 
 - Repository Design Pattern
 
--N Tier Architecture
+- N Tier Architecture
 
 - Asp.Net Core Identity
 
